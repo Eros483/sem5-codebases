@@ -1,0 +1,14 @@
+Nodes in Top 5 of Both PageRank and HITS Authority:
+  - Bob: Page Rank Score =0.135000, Auth=0.399093
+  - Alice: Page Rank Score =0.133304, Auth=0.440114
+  - Frank: Page Rank Score =0.105583, Auth=0.326824
+  - Diana: Page Rank Score =0.117840, Auth=0.428180
+
+Key Observations:
+  • PageRank identifies globally important nodes based on entire link structure, without considering specific context.
+  • HITS Authority identifies nodes that receive many links from good hubs.
+  • HITS Hub identifies nodes that link to many good authorities.
+  • This allows it to rank nodes with specific context, unlike page rank.
+  • In this social network, high Page Rank nodes are influential users who also seem to have high authoritative scores.
+  • High authority nodes create popular content that gets retweeted, making them a reliable information source.
+  • High hub nodes are effective promoters who amplify quality content and verify the authority nodes.
