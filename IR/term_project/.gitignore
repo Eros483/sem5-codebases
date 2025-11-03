@@ -1,0 +1,6 @@
+*.log
+Information_Retrieval_Dual_Embedding_Model.egg-info/
+__pycache__/
+models/
+*__init__.py
+*.png
