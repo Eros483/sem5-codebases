@@ -23,7 +23,7 @@ def prepare_MS_Marco_Subset(limit=1000):
     # print("Sample item:", ds[0])
 
     try:
-        with open("data/corpus.tsv", "w", newline='') as fc, open("data/queries.tsv", "w", newline='') as fq:
+        with open("ms_marco/corpus.tsv", "w", newline='') as fc, open("ms_marco/queries.tsv", "w", newline='') as fq:
             corpus_writer = csv.writer(fc, delimiter='\t')
             query_writer = csv.writer(fq, delimiter='\t')
 

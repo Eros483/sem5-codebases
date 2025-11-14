@@ -6,7 +6,7 @@ from utils.custom_exception import CustomException
 
 logger=get_logger(__name__)
 
-def load_train_examples(query_path="data/queries.tsv", corpus_path="data/corpus.tsv"):
+def load_train_examples(query_path="wordNet/queries.tsv", corpus_path="wordNet/corpus.tsv"):
     """
     Load training examples from the given query and corpus files.
 
@@ -54,7 +54,7 @@ def train_euclidean_model():
             show_progress_bar=True
         )
 
-        model.save("models/euclidean/")
+        model.save("models/wordNet/euclidean/")
         logger.info("Model trained and saved.")
     
     except Exception as e:

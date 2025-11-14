@@ -30,7 +30,7 @@ class HyperbolicDualEncoder(torch.nn.Module):
         sent = self.manifold.expmap0(mean_tang)
         return self.manifold.projx(sent)
 
-def load_data(queries_path="data/queries.tsv", corpus_path="data/corpus.tsv"):
+def load_data(queries_path="wordNet/queries.tsv", corpus_path="wordNet/corpus.tsv"):
     """Load queries and corpus."""
     corpus = {}
     with open(corpus_path, "r") as fc:
@@ -366,13 +366,13 @@ def main():
     
     # Load Euclidean model
     print("Loading Euclidean model...")
-    euc_model = SentenceTransformer("models/euclidean/")
+    euc_model = SentenceTransformer("models/wordNet/euclidean/")
     
     # Load Hyperbolic model
     print("Loading Hyperbolic model...")
     tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
     hyp_model = HyperbolicDualEncoder(vocab_size=tokenizer.vocab_size, dim=128).to(device)
-    hyp_model.load_state_dict(torch.load("models/hyperbolic/model.pth", map_location=device))
+    hyp_model.load_state_dict(torch.load("models/wordNet/hyperbolic/model.pth", map_location=device))
     
     # Encode
     print("\nEncoding with Euclidean model...")

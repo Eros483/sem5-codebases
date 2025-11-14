@@ -4,3 +4,5 @@ __pycache__/
 models/
 *__init__.py
 *.png
+wordNet/
+ms_marco/

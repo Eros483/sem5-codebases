@@ -92,7 +92,7 @@ def train_hyperbolic_model():
         raise CustomException("Error loading tokenizer", e)
 
     try:
-        dataset=TextDataset("data/queries.tsv", "data/corpus.tsv", tokenizer)
+        dataset=TextDataset("wordNet/queries.tsv", "wordNet/corpus.tsv", tokenizer)
         dataloader=DataLoader(dataset, batch_size=16, shuffle=True)
         logger.info(f"Dataset loaded with {len(dataset)} samples.")
     
@@ -111,8 +111,8 @@ def train_hyperbolic_model():
             loss=train_model(model, dataloader, optimizer, model.manifold, device)
             logger.info(f"Epoch {epoch+1}/5, Loss: {loss:.4f}")
         
-        os.makedirs("models/hyperbolic", exist_ok=True)
-        torch.save(model.state_dict(), "models/hyperbolic/model.pth")
+        os.makedirs("models/wordNet/hyperbolic", exist_ok=True)
+        torch.save(model.state_dict(), "models/wordNet/hyperbolic/model.pth")
         logger.info("Model trained and saved.")
 
     except Exception as e:
