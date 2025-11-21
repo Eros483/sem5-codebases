@@ -7,4 +7,4 @@ data/cifar-10-batches-py/
 captions.txt (1).zip/
 Flicker8k_Dataset/
 *.pt
-
+outputs/
